@@ -14,7 +14,7 @@
 <body>
   <div id="navbar" class="fade-in-text navbar navbar-expand-lg text-primary">
     <div class="container w-75">
-      <a href="index.html" class="navbar-brand" style="color: blue;">
+      <a href="/" class="navbar-brand" style="color: blue;">
         <i class="bi bi-house"></i>
       </a>
 
@@ -175,6 +175,37 @@
         </div>
     </div>
 
+    <div class="container px-5">
+      <button class="btn btn-primary mx-5 my-3" onclick="displayPayments()">Order</button>
+    </div>
+
+    <div id="order-procedure" class="d-none">
+      <div class="container d-md-flex text-center text-md-start justify-content-md-between w-50">
+        <div>
+          <strong>Order by phone/SMS</strong> <br>
+          +254 722 711 631
+        </div>
+        <!-- <div>
+          <strong>Order by email</strong> <br>
+          maryfaygiftshop@gmail.com
+        </div> -->
+        <div class="d-flex flex-column">
+          <strong>Lipa na M-Pesa</strong>
+          <span>Go to M-PESA</span>
+          <span>Select Lipa Na M-PESA</span>
+          <span>Select Buy Goods</span>
+          <span>Enter Till Number xxx</span>
+          <span>Enter the Amount and complete the transaction.</span>
+          <button class="btn btn-primary" onclick="collectMpesaCode()">Proceed</button>
+          <div id="mpesa-code" class="d-none my-3">
+            <label for="codeInput">Enter the M-Pesa code</label><br>
+            <input id="codeInput" type="text"><br>
+            <button class="btn btn-primary my-1" onclick="collectMpesaCode()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="socials d-flex justify-content-center py-3">
           
       <a href="meta.com"><span class="mx-3">
@@ -199,12 +230,10 @@
               <li><a href="about.html">about</a></li>
             </div>
             <div class="col-md-4 col-6 my-3">
-                <li><a href="">PV5M+F3G, Mumias S Rd, Nairobi</a></li>
-          
-              </div>
+              PV5M+F3G, Mumias S Rd, Nairobi          
+            </div>
             <div class="col-md-4 col-6 my-3">
-              <li><a href="">+254 722 711 631</a></li>
-        
+              +254 722 711 631
             </div>
             
           </div>
@@ -215,6 +244,14 @@
 
       <script src="main.js"></script>
 
+      <script>
+        displayPayments = function () {
+            document.getElementById('order-procedure').classList.remove('d-none')
+        }
 
+        collectMpesaCode = function () {
+            document.getElementById('mpesa-code').classList.remove('d-none')
+        }
+      </script>
 </body>
 </html>
